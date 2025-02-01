@@ -1,0 +1,30 @@
+{
+  "name": "css-reader",
+  "version": "0.0.1",
+  "description": "Reads and parses CSS files.",
+  "keywords": [
+    "css",
+    "nodejs",
+    "read file",
+    "parse css",
+    "read css"
+  ],
+  "homepage": "https://github.com/George-Al3xander/css-reader",
+  "bugs": {
+    "url": "https://github.com/George-Al3xander/css-reader/issues"
+  },
+  "author": "Heorhii Valuiskyi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/George-Al3xander/css-reader.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
+}
