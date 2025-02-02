@@ -22,12 +22,18 @@
         "format": "pnpm biome format --write .",
         "lint": "biome lint --error-on-warnings .",
         "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
-        "test": "vitest run"
+        "test": "vitest run",
+        "test:coverage": "jest --coverage",
+        "test:watch": "jest --watch",
+        "prepare": "husky"
     },
     "license": "MIT",
     "devDependencies": {
         "@arethetypeswrong/cli": "^0.17.3",
         "@biomejs/biome": "1.9.4",
+        "@commitlint/cli": "^19.6.1",
+        "@commitlint/config-conventional": "^19.6.0",
+        "husky": "^9.1.7",
         "typescript": "^5.7.3",
         "vitest": "^3.0.4"
     }
