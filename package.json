@@ -18,15 +18,17 @@
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "tsc",
-        "ci": "pnpm lint && pnpm format && pnpm build && pnpm check-exports",
+        "ci": "pnpm build && pnpm check-exports & pnpm lint && pnpm format && pnpm test",
         "format": "pnpm biome format --write .",
         "lint": "biome lint --error-on-warnings .",
-        "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm"
+        "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+        "test": "vitest run"
     },
     "license": "MIT",
     "devDependencies": {
         "@arethetypeswrong/cli": "^0.17.3",
         "@biomejs/biome": "1.9.4",
-        "typescript": "^5.7.3"
+        "typescript": "^5.7.3",
+        "vitest": "^3.0.4"
     }
 }
