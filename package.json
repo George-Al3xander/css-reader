@@ -1,34 +1,30 @@
 {
-  "name": "css-reader",
-  "version": "0.0.1",
-  "description": "Reads and parses CSS files.",
-  "keywords": [
-    "css",
-    "nodejs",
-    "read file",
-    "parse css",
-    "read css"
-  ],
-  "homepage": "https://github.com/George-Al3xander/css-reader",
-  "bugs": {
-    "url": "https://github.com/George-Al3xander/css-reader/issues"
-  },
-  "author": "Heorhii Valuiskyi",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/George-Al3xander/css-reader.git"
-  },
-  "files": [
-    "dist"
-  ],
-  "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc",
-    "ci": "pnpm build"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "typescript": "^5.7.3"
-  }
+    "name": "css-reader",
+    "version": "0.0.1",
+    "description": "Reads and parses CSS files.",
+    "keywords": ["css", "nodejs", "read file", "parse css", "read css"],
+    "homepage": "https://github.com/George-Al3xander/css-reader",
+    "bugs": {
+        "url": "https://github.com/George-Al3xander/css-reader/issues"
+    },
+    "author": "Heorhii Valuiskyi",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/George-Al3xander/css-reader.git"
+    },
+    "files": ["dist"],
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc",
+        "ci": "pnpm lint && pnpm format && pnpm build",
+        "format": "pnpm biome format --write .",
+        "lint": "biome lint --error-on-warnings .",
+        "check-format": "prettier --check ."
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@biomejs/biome": "1.9.4",
+        "typescript": "^5.7.3"
+    }
 }
