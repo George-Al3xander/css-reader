@@ -1,6 +1,6 @@
 {
     "name": "css-reader",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Reads and parses CSS files.",
     "keywords": ["css", "nodejs", "read file", "parse css", "read css"],
     "homepage": "https://github.com/George-Al3xander/css-reader",
@@ -25,12 +25,15 @@
         "test": "vitest run",
         "test:coverage": "jest --coverage",
         "test:watch": "jest --watch",
-        "prepare": "husky"
+        "prepare": "husky",
+        "release:local": "changeset version && changeset publish",
+        "prepublishOnly": "pnpm run ci"
     },
     "license": "MIT",
     "devDependencies": {
         "@arethetypeswrong/cli": "^0.17.3",
         "@biomejs/biome": "1.9.4",
+        "@changesets/cli": "^2.27.12",
         "@commitlint/cli": "^19.6.1",
         "@commitlint/config-conventional": "^19.6.0",
         "husky": "^9.1.7",
