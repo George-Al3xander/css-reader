@@ -7,6 +7,13 @@ settings:
 importers:
 
   .:
+    dependencies:
+      postcss:
+        specifier: ^8.5.1
+        version: 8.5.1
+      postcss-js:
+        specifier: ^4.0.1
+        version: 4.0.1(postcss@8.5.1)
     devDependencies:
       '@arethetypeswrong/cli':
         specifier: ^0.17.3
@@ -23,6 +30,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^19.6.0
         version: 19.6.0
+      '@types/postcss-js':
+        specifier: ^4.0.4
+        version: 4.0.4
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -548,6 +558,9 @@ packages:
   '@types/node@22.13.0':
     resolution: {integrity: sha512-ClIbNe36lawluuvq3+YYhnIN2CELi+6q8NpnM7PYp4hBn/TatfboPgVSm2rwKRfnV2M+Ty9GWDFI64KEe+kysA==}
 
+  '@types/postcss-js@4.0.4':
+    resolution: {integrity: sha512-j5+GMZVIPCJpRTwI/mO64mCzv7X+zAEq3JP0EV2lo/BrLWHAohEubUJimIAY23rH27+wKce0fXUYjAdBoqlaYw==}
+
   '@vitest/expect@3.0.4':
     resolution: {integrity: sha512-Nm5kJmYw6P2BxhJPkO3eKKhGYKRsnqJqf+r0yOGRKpEP+bSCBDsjXgiu1/5QFrnPMEgzfC38ZEjvCFgaNBC0Eg==}
 
@@ -655,6 +668,10 @@ packages:
   callsites@3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
+
+  camelcase-css@2.0.1:
+    resolution: {integrity: sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==}
+    engines: {node: '>= 6'}
 
   chai@5.1.2:
     resolution: {integrity: sha512-aGtmf24DW6MLHHG5gCx4zaI3uBq3KRtxeVs0DjFH6Z0rDNbsvTxFASFvdj79pxjxZ8/5u3PIiN3IwEIQkiiuPw==}
@@ -1255,6 +1272,12 @@ packages:
   pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
+
+  postcss-js@4.0.1:
+    resolution: {integrity: sha512-dDLF8pEO191hJMtlHFPRa8xsizHaM82MLfNkUHdUtVEV3tgTp5oj+8qbEqYM57SLfc74KSbw//4SeJma2LRVIw==}
+    engines: {node: ^12 || ^14 || >= 16}
+    peerDependencies:
+      postcss: ^8.4.21
 
   postcss-load-config@6.0.1:
     resolution: {integrity: sha512-oPtTM4oerL+UXmx+93ytZVN82RrlY/wPUV8IeDxFrzIjXOLF1pN+EmKPLbubvKHT2HC20xXsCAH2Z+CKV6Oz/g==}
@@ -2173,6 +2196,10 @@ snapshots:
     dependencies:
       undici-types: 6.20.0
 
+  '@types/postcss-js@4.0.4':
+    dependencies:
+      postcss: 8.5.1
+
   '@vitest/expect@3.0.4':
     dependencies:
       '@vitest/spy': 3.0.4
@@ -2277,6 +2304,8 @@ snapshots:
   cac@6.7.14: {}
 
   callsites@3.1.0: {}
+
+  camelcase-css@2.0.1: {}
 
   chai@5.1.2:
     dependencies:
@@ -2818,6 +2847,11 @@ snapshots:
   pify@4.0.1: {}
 
   pirates@4.0.6: {}
+
+  postcss-js@4.0.1(postcss@8.5.1):
+    dependencies:
+      camelcase-css: 2.0.1
+      postcss: 8.5.1
 
   postcss-load-config@6.0.1(jiti@2.4.2)(postcss@8.5.1):
     dependencies:
