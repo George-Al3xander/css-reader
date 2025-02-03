@@ -12,12 +12,9 @@
         "strict": true,
         "noUncheckedIndexedAccess": true,
         "noImplicitOverride": true,
-
-        "module": "NodeNext",
-        "outDir": "dist",
-        "rootDir": "src",
-        "sourceMap": true,
-        "declaration": true
+        "module": "Preserve",
+        "moduleResolution": "bundler",
+        "noEmit": true
     },
     "include": ["src"],
     "exclude": ["node_modules", "dist"],

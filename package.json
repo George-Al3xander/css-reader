@@ -2,7 +2,13 @@
     "name": "css-reader",
     "version": "0.0.2",
     "description": "Reads and parses CSS files.",
-    "keywords": ["css", "nodejs", "read file", "parse css", "read css"],
+    "keywords": [
+        "css",
+        "nodejs",
+        "read file",
+        "parse css",
+        "read css"
+    ],
     "homepage": "https://github.com/George-Al3xander/css-reader",
     "bugs": {
         "url": "https://github.com/George-Al3xander/css-reader/issues"
@@ -12,24 +18,32 @@
         "type": "git",
         "url": "git+https://github.com/George-Al3xander/css-reader.git"
     },
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "type": "module",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "build": "tsc",
-        "ci": "pnpm build && pnpm check-exports & pnpm lint && pnpm format && pnpm test",
+        "build": "tsup",
+        "ci": "pnpm build && pnpm check-exports & pnpm lint && pnpm format:check && pnpm test",
         "format": "pnpm biome format --write .",
-        "lint": "biome lint --error-on-warnings .",
-        "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+        "format:check": "pnpm biome format .",
+        "lint": "tsc && biome lint --error-on-warnings .",
+        "check-exports": "attw --pack .",
         "test": "vitest run",
-        "test:coverage": "jest --coverage",
-        "test:watch": "jest --watch",
         "prepare": "husky",
         "release:local": "changeset version && changeset publish",
         "prepublishOnly": "pnpm run ci"
     },
     "license": "MIT",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "import": "./dist/index.js",
+            "default": "./dist/index.cjs"
+        }
+    },
     "devDependencies": {
         "@arethetypeswrong/cli": "^0.17.3",
         "@biomejs/biome": "1.9.4",
@@ -37,6 +51,7 @@
         "@commitlint/cli": "^19.6.1",
         "@commitlint/config-conventional": "^19.6.0",
         "husky": "^9.1.7",
+        "tsup": "^8.3.6",
         "typescript": "^5.7.3",
         "vitest": "^3.0.4"
     }
