@@ -1,3 +1,3 @@
-import postcssJs from "postcss-js";
-
-export type TObjectifiedCss = postcssJs.CssInJs;
+export type TObjectifiedCss = {
+    [key: string]: string | TObjectifiedCss | TObjectifiedCss[];
+};
