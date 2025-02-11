@@ -1,5 +1,11 @@
 # css-reader
 
+## 0.3.0
+
+### Minor Changes
+
+- 06f493d: Create a readCssFile function that reads & parses the contents of a CSS file.
+
 ## 0.2.0
 
 ### Minor Changes

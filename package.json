@@ -1,6 +1,6 @@
 {
     "name": "css-reader",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Reads and parses CSS files.",
     "keywords": ["css", "nodejs", "read file", "parse css", "read css"],
     "homepage": "https://github.com/George-Al3xander/css-reader",
@@ -42,6 +42,7 @@
         "@changesets/cli": "^2.27.12",
         "@commitlint/cli": "^19.6.1",
         "@commitlint/config-conventional": "^19.6.0",
+        "@types/node": "^22.13.1",
         "@types/postcss-js": "^4.0.4",
         "husky": "^9.1.7",
         "tsup": "^8.3.6",

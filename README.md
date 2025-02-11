@@ -23,6 +23,32 @@ yarn add css-reader
 
 ## Usage
 
+### `readCssFile`
+
+```ts
+import { readCssFile } from "css-reader";
+
+(async () => {
+    const cssObject = await readCssFile("styles.css");
+    console.log(cssObject);
+    /*
+    {
+      ".button": {
+        backgroundColor: "blue",
+        color: "white"
+      },
+      ".container": {
+        display: "flex",
+        padding: "10px"
+      }
+    }
+    */
+
+    const paddingValue = await readCssFile("styles.css", ".container", "padding");
+    console.log(paddingValue); // "10px"
+})();
+```
+
 ### `objectifyCss`
 
 ```ts
@@ -62,14 +88,14 @@ console.log(cssObject);
 import { getCssProperty } from "css-reader";
 
 const cssObject = {
-    ".button": {
-        backgroundColor: "blue",
-        color: "white"
-    },
-    ".container": {
-        display: "flex",
-        padding: "10px"
-    }
+  ".button": {
+    backgroundColor: "blue",
+    color: "white"
+  },
+  ".container": {
+    display: "flex",
+    padding: "10px"
+  }
 };
 
 const paddingValue = getCssProperty(cssObject, ".container", "padding");
@@ -80,6 +106,17 @@ console.log(nonExistentValue); // null
 ```
 
 ## API
+
+### `readCssFile(filePath: string, ...propertyPath: string[]): Promise<TObjectifiedCss | string | null>`
+
+Reads a CSS file and returns either the entire objectified CSS or a specific property if a path is provided.
+
+#### Parameters:
+- `filePath: string` - Path to the CSS file.
+- `propertyPath: string[]` - Optional property path to retrieve a specific CSS value.
+
+#### Returns:
+- `Promise<TObjectifiedCss | string | null>` - The objectified CSS or the value of the specified property, or `null` if an error occurs.
 
 ### `objectifyCss(styles: string): TObjectifiedCss | null`
 
